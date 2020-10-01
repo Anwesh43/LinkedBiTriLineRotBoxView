@@ -128,4 +128,45 @@ class BiTriLineRotBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    data class BTLRBNode(var i : Int, val state : State = State()) {
+
+        private var next : BTLRBNode? = null
+        private var prev : BTLRBNode? = null
+
+        init {
+
+        }
+
+        fun addNeighbor() {
+            if (i < colors.size - 1) {
+                next = BTLRBNode(i + 1)
+                next?.prev = this
+            }
+        }
+
+        fun draw(canvas : Canvas, paint : Paint) {
+            canvas.drawBTLRBNode(i, state.scale, paint)
+        }
+
+        fun update(cb : (Float) -> Unit) {
+            state.update(cb)
+        }
+
+        fun startUpdating(cb : () -> Unit) {
+            state.startUpdating(cb)
+        }
+
+        fun getNext(dir : Int, cb : () -> Unit) : BTLRBNode {
+            var curr : BTLRBNode? = prev
+            if (dir == 1) {
+                curr = next
+            }
+            if (curr != null) {
+                return curr
+            }
+            cb()
+            return this
+        }
+    }
 }
