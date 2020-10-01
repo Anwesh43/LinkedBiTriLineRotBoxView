@@ -192,4 +192,27 @@ class BiTriLineRotBoxView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiTriLineRotBoxView) {
+
+        private val animator : Animator = Animator(view)
+        private val btlrb : BiTriLineRotBox = BiTriLineRotBox(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            btlrb.draw(canvas, paint)
+            animator.animate {
+                btlrb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            btlrb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
