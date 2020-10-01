@@ -217,4 +217,13 @@ class BiTriLineRotBoxView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiTriLineRotBoxView {
+            val view : BiTriLineRotBoxView = BiTriLineRotBoxView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
