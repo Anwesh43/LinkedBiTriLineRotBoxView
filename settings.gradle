@@ -1,1 +1,1 @@
-include ':app', ':bitrilinerotboxview'
+include ':app', ':bitrilinerotboxview', ':frombottomtrilineview'

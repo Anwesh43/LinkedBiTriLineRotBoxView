@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LinkedBiTriLineRotBoxView.iml" filepath="$PROJECT_DIR$/LinkedBiTriLineRotBoxView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitrilinerotboxview/bitrilinerotboxview.iml" filepath="$PROJECT_DIR$/bitrilinerotboxview/bitrilinerotboxview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frombottomtrilineview/frombottomtrilineview.iml" filepath="$PROJECT_DIR$/frombottomtrilineview/frombottomtrilineview.iml" />
     </modules>
   </component>
 </project>
