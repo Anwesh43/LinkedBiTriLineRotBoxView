@@ -205,4 +205,13 @@ class FromBottomLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : FromBottomLineView {
+            val view : FromBottomLineView = FromBottomLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
