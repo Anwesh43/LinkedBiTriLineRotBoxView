@@ -180,4 +180,27 @@ class FromBottomLineView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : FromBottomLineView) {
+
+        private val animator : Animator = Animator(view)
+        private val fbl : FromBottomLine = FromBottomLine(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            fbl.draw(canvas, paint)
+            animator.animate {
+                fbl.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            fbl.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
