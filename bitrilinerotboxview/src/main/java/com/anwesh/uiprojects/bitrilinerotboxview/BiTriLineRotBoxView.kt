@@ -137,7 +137,7 @@ class BiTriLineRotBoxView(ctx : Context) : View(ctx) {
         private var prev : BTLRBNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
